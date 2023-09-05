@@ -1,0 +1,32 @@
+from django.urls import path
+from App1 import views
+urlpatterns = [
+    path('',views.ProductView.as_view(),name="home"),
+    path('product-detail/<int:pk>',views.productview, name='product-detail'),
+    path('add-to-cart/<int:pk>', views.add_to_cart, name='add-to-cart'),
+    path('cart/', views.show_cart, name='showcart'),
+    path('delete-product/<int:pk>', views.delete_product, name='delete_product'),
+    # path('edit-profile/<int:pk>', views.profile_update, name='profile_update'),
+    # path('pluscart/', views.plus_cart),
+    # path('minuscart/', views.minus_cart),
+    path('buy-now/', views.buy_now, name='buynow'),
+    path('paymentdone/', views.payment_done, name='paymentdone'),
+    path('profile/', views.profile, name='profile'),
+    path('address/', views.address, name='address'),
+    path('address/<int:pk>', views.address, name='address'),
+    path('orders/', views.orders, name='orders'),
+    # path('changepassword/', views.change_password, name='changepassword'),
+    path('mobile/', views.mobile, name='mobile'),
+    path('mobile/<slug:data>', views.mobile, name='mobiledata'),
+    path('laptop/', views.laptop, name='laptop'),
+    path('laptop/<slug:data>', views.laptop, name='laptopdata'),
+    path('top/', views.top, name='top'),
+    path('top/<slug:data>', views.top, name='topdata'),
+    path('bottom/', views.bottom, name='bottom'),
+    path('bottom/<slug:data>', views.bottom, name='bottomdata'),
+    path('login/', views.loginUser, name='loginuser'),
+    path('logout/', views.logoutUSer, name='logoutuser'),
+    path('registration/', views.customerregistration, name='customerregistration'),
+    path('checkout/', views.checkout, name='checkout'),
+
+]
